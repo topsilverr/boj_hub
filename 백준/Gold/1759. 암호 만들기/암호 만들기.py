@@ -1,20 +1,20 @@
-import sys
 from itertools import combinations
-input = sys.stdin.readline
+l,c = map(int,input().split())
 
-l, c = map(int, input().split())
-alph = list(map(str, input().split()))
-alph.sort()
-comb = combinations(alph, l)
-moum = ['a', 'e', 'i', 'o', 'u']
-res = []
-for c in comb:
-    j = 0
-    m = 0
-    for i in range(l):
-        if c[i] in moum:
-            m += 1
+alp = list(map(str,input().split()))
+alp.sort()
+
+vowl = ['a','e','i','o','u']
+
+comb = list(combinations(alp,l))
+
+for li in comb:
+    v = 0
+    c = 0
+    for p in li:
+        if p in vowl:
+            v+=1
         else:
-            j += 1
-    if m>=1 and j>=2:
-        print(''.join(c))
+            c+=1
+    if v >= 1 and c>=2:
+        print(''.join(li))

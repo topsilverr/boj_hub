@@ -11,4 +11,4 @@ SELECT
 
 from USED_GOODS_BOARD
 where CREATED_DATE = "2022-10-05%"
-order by 1 desc
+order by BOARD_ID desc
